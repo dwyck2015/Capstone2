@@ -24,11 +24,15 @@ knit        : slidify::knit2slides
 
 ## Overview
 
-The Shiny app predicts the next word in a sentence.
+The Shiny app predicts the next word in a sentence using n-gram language models.
 
-It makes use of n-gram language models, specifically
-- Markov Chains to store n-grams (up to 5-grams used)
-- Katz's back-off model to estimate the probability against its history
+
+Simple Instructions!
+<ol start="1">
+<li> Go to app: https://johnsonkd.shinyapps.io/NextWordApp/ </li>
+<li> Type the phrase into the text box </li>
+<li> Click submit </li>
+</ol>
 
 
 
@@ -38,14 +42,22 @@ It makes use of n-gram language models, specifically
 
 This app makes use of english language blog, twitter and news text results, from a corpus called HC Corpora (www.corpora.heliohost.org)
 
+60% of each of the following files were used for algorithm development (40% for testing)
+- en_US.blogs.txt (899,288 lines & 37,546,246 words)
+- en_US.news.txt (77,259 lines & 2,674,536)
+- en_US.twitter.txt (2,360,148 lines & 30,093,410 words)
+
 
 
 --- .class #id 
 
-## Instructions
+## Model development
 
-Simple!
+It makes use of n-gram language models for a clean dataset:
+- Curse words, stopwords, capitalization, punctuation are removed
+- Markov Chains to store n-grams (1-grams to 5-grams used)
+- Katz's back-off model to estimate the probability against its history (with penalty applied to probability score to get more matches)
 
-1. Type the phrase into the text box
-2. Click submit
 
+THANK YOU!
+Please send feedback to: dwyck_kdjohns@gmail.com

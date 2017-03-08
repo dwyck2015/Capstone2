@@ -59,14 +59,15 @@
     <h2>Overview</h2>
   </hgroup>
   <article data-timings="">
-    <p>The Shiny app predicts the next word in a sentence.</p>
+    <p>The Shiny app predicts the next word in a sentence using n-gram language models.</p>
 
-<p>It makes use of n-gram language models, specifically</p>
+<p>Simple Instructions!</p>
 
-<ul>
-<li>Markov Chains to store n-grams (up to 5-grams used)</li>
-<li>Katz&#39;s back-off model to estimate the probability against its history</li>
-</ul>
+<ol start="1">
+<li> Go to app: https://johnsonkd.shinyapps.io/NextWordApp/ </li>
+<li> Type the phrase into the text box </li>
+<li> Click submit </li>
+</ol>
 
   </article>
   <!-- Presenter Notes -->
@@ -79,21 +80,33 @@
   <article data-timings="">
     <p>This app makes use of english language blog, twitter and news text results, from a corpus called HC Corpora (<a href="http://www.corpora.heliohost.org">www.corpora.heliohost.org</a>)</p>
 
+<p>60% of each of the following files were used for algorithm development (40% for testing)</p>
+
+<ul>
+<li>en_US.blogs.txt (899,288 lines &amp; 37,546,246 words)</li>
+<li>en_US.news.txt (77,259 lines &amp; 2,674,536)</li>
+<li>en_US.twitter.txt (2,360,148 lines &amp; 30,093,410 words)</li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Instructions</h2>
+    <h2>Model development</h2>
   </hgroup>
   <article data-timings="">
-    <p>Simple!</p>
+    <p>It makes use of n-gram language models for a clean dataset:</p>
 
-<ol>
-<li>Type the phrase into the text box</li>
-<li>Click submit</li>
-</ol>
+<ul>
+<li>Curse words, stopwords, capitalization, punctuation are removed</li>
+<li>Markov Chains to store n-grams (1-grams to 5-grams used)</li>
+<li>Katz&#39;s back-off model to estimate the probability against its history (with penalty applied to probability score to get more matches)</li>
+</ul>
+
+<p>THANK YOU!
+Please send feedback to: <a href="mailto:dwyck_kdjohns@gmail.com">dwyck_kdjohns@gmail.com</a></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -123,7 +136,7 @@
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Instructions'>
+        data-slide=4 title='Model development'>
          4
       </a>
     </li>
